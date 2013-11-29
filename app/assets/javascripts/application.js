@@ -22,3 +22,7 @@
 //= require_tree ./views
 //= require_tree ./routers
 //= require_tree .
+
+$(function() {
+  Backbone.history.start()
+});

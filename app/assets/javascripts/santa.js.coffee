@@ -3,7 +3,8 @@ window.Santa =
   Collections: {}
   Views: {}
   Routers: {}
-  initialize: -> alert 'Hello from Backbone!'
+  initialize: ->
+    new Santa.Routers.People
 
 $(document).ready ->
   Santa.initialize()
