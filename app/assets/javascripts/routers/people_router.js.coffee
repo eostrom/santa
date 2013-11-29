@@ -3,4 +3,3 @@ class Santa.Routers.People extends Backbone.Router
     '' : 'index'
 
   index: ->
-    new Santa.Views.PeopleIndex
