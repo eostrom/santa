@@ -5,15 +5,21 @@ class Santa.Views.PeopleIndex extends Backbone.View
   initialize: ->
     @render()
 
+    # TODO: add/remove individual subviews instead of rerendering everything
     @collection.on 'add remove', @render
 
   render: =>
-    this.$el.html(this.template({people: @collection.models}))
+    @$el.html(this.template())
+    $table = @$el.find('#people')
+
+    @collection.map (person) ->
+      subview = new Santa.Views.PersonRow(model: person)
+      $table.append(subview.el)
+
     this
 
   events:
     'submit #add-person': 'addPerson'
-    'click .delete-person': 'deletePerson'
 
   addPerson: (event) ->
     event.preventDefault()
@@ -23,9 +29,3 @@ class Santa.Views.PeopleIndex extends Backbone.View
     $name.val('')
 
     @collection.add({name: name}).save()
-
-  deletePerson: (event) ->
-    event.preventDefault()
-
-    id = $(event.target).data('person-id')
-    @collection.get(id).destroy()

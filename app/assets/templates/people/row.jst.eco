@@ -1,0 +1,6 @@
+<td>
+  <%= @person.get('name') %>
+</td>
+<td>
+  <button class="delete-person">Delete</button>
+</td>

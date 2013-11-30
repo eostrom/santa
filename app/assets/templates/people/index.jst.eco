@@ -5,19 +5,5 @@
   <input type="submit" value="Add">
 </form>
 
-<table>
-  <% for person in @people: %>
-    <tr>
-      <td>
-        <%= person.get('name') %>
-      </td>
-      <td>
-        <button
-            class="delete-person"
-            data-person-id="<%= person.get('id') %>">
-          Delete
-        </button>
-      </td>
-    </tr>
-  <% end %>
+<table id="people">
 </table>
