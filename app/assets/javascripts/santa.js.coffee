@@ -4,13 +4,8 @@ window.Santa =
   Views: {}
   Routers: {}
   initialize: ->
-    people = new Santa.Collections.People [
-      {name: 'Christian Lipski'}
-      {name: 'Erik Ostrom'}
-      {name: 'Kai Stewart'}
-      {name: 'John Fremer III'}
-      {name: 'Matt Brown'}
-    ]
+    people = new Santa.Collections.People
+    people.fetch()
 
     new Santa.Views.PeopleIndex(collection: people)
     new Santa.Routers.People
