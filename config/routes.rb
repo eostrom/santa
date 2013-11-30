@@ -1,5 +1,5 @@
 Santa::Application.routes.draw do
-  resources :people, only: [:index, :create, :show]
+  resources :people, only: [:index, :create, :show, :destroy]
 
   get "home/index"
   # The priority is based upon order of creation: first created -> highest priority.
