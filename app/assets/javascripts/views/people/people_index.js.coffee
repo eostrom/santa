@@ -21,5 +21,4 @@ class Santa.Views.PeopleIndex extends Backbone.View
     name = $name.val()
     $name.val('')
 
-    @collection.add [{name: name}]
-
+    @collection.add({name: name}).save()
