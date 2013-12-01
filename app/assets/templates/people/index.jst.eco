@@ -6,6 +6,11 @@
 </form>
 
 <table id="people">
+  <tr>
+    <th colspan="1">Santa</th>
+    <th>&nbsp;</th>
+    <th colspan="3">Recipients</th>
+  </tr>
 </table>
 
 <button id="santafy">Santafy!</button>
