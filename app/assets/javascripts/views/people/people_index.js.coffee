@@ -12,6 +12,7 @@ class Santa.Views.PeopleIndex extends Backbone.View
   render: =>
     @$el.html(this.template())
     $table = @$el.find('#people')
+    @$el.find('input[name=name]').focus()
 
     @collection.map (person) ->
       subview = new Santa.Views.PersonRow(model: person)
