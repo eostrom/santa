@@ -22,6 +22,12 @@ class PeopleController < ApplicationController
     render json: Person.all
   end
 
+  def desantafy
+    Desantafier.new(Person.all).desantafy!
+
+    render json: Person.all
+  end
+
   private
 
   def person_params

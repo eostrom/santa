@@ -22,6 +22,7 @@ class Santa.Views.PeopleIndex extends Backbone.View
   events:
     'submit #add-person': 'addPerson'
     'click #santafy': 'santafy'
+    'click #desantafy': 'desantafy'
 
   addPerson: (event) ->
     event.preventDefault()
@@ -34,3 +35,7 @@ class Santa.Views.PeopleIndex extends Backbone.View
 
   santafy: (event) ->
     @collection.santafy()
+
+  desantafy: (event) ->
+    @collection.desantafy()
+

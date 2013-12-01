@@ -8,3 +8,9 @@ class Santa.Collections.People extends Backbone.Collection
       url: @url + '/santafy'
       type: 'PUT'
       reset: true
+
+  desantafy: ->
+    @fetch
+      url: @url + '/desantafy'
+      type: 'PUT'
+      reset: true
