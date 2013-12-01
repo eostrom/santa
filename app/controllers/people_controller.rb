@@ -16,6 +16,12 @@ class PeopleController < ApplicationController
     respond_with @person
   end
 
+  def santafy
+    Santafier.new(Person.all).santafy!
+
+    render json: Person.all
+  end
+
   private
 
   def person_params

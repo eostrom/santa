@@ -4,3 +4,8 @@
 <td>
   <button class="delete-person">Delete</button>
 </td>
+<% for i in [0..2]: %>
+  <td>
+    <%= @person.get('gift_recipient_names')[i] %>
+  </td>
+<% end %>
