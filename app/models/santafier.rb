@@ -4,12 +4,18 @@ class Santafier
   def initialize(people)
     @people = people
 
-    @recipients = people.to_a.dup
+    @recipients = people.to_a
+    @recipients.reject! { |person| done_receiving?(person) }
+
     @givers = people.to_a.dup
+    @givers.reject! { |person| done_giving?(person) }
+
+    @making_progress = true
   end
 
   def santafy!
-    until @recipients.length <= 1 # sometimes somebody gets left out :-(
+    while @making_progress
+      @making_progress = false
       @recipients.shuffle.each do |recipient|
         giver = pick_giver(for: recipient)
 
@@ -29,6 +35,7 @@ class Santafier
     recipient = options[:to]
 
     Gift.create(giver: giver, recipient: recipient)
+    @making_progress = true
 
     @givers.delete(giver) if done_giving?(giver)
     @recipients.delete(recipient) if done_receiving?(recipient)
