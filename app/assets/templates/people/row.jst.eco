@@ -1,4 +1,4 @@
-<td>
+<td class="<%= 'needs_more_santas' if @person.needs_more_santas() %>">
   <%= @person.get('name') %>
 </td>
 <td>

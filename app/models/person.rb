@@ -5,7 +5,8 @@ class Person < ActiveRecord::Base
   has_many :givers, class_name: 'Person', through: :gifts_received
 
   def as_json(options = {})
-    super(only: [:id, :name], methods: [:gift_recipient_names])
+    super(only: [:id, :name],
+          methods: [:gift_recipient_names, :gifts_received_count])
   end
 
   def gift_recipient_names
@@ -14,5 +15,9 @@ class Person < ActiveRecord::Base
 
   def add_recipient(recipient)
     recipients << recipient
+  end
+
+  def gifts_received_count
+    gifts_received.count
   end
 end
