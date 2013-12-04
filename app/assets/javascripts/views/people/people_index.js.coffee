@@ -10,7 +10,7 @@ class Santa.Views.PeopleIndex extends Backbone.View
     @collection.on 'reset', @render
 
   render: =>
-    @$el.html(this.template())
+    @$el.html(this.template({people: @collection}))
     $table = @$el.find('#people')
     @$el.find('input[name=name]').focus()
 
