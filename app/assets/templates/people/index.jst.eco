@@ -15,3 +15,7 @@
 
 <button id="santafy">Santafy!</button>
 <button id="desantafy">Desantafy!</button>
+
+<div id="export">
+  <a href="/people.csv">Export CSV</a>
+</div>

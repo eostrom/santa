@@ -44,6 +44,8 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
+    csv_builder (2.1.1)
+      actionpack (>= 3.0.0)
     eco (1.0.0)
       coffee-script
       eco-source
@@ -138,6 +140,7 @@ DEPENDENCIES
   backbone-on-rails
   better_errors
   coffee-rails (~> 4.0.0)
+  csv_builder
   haml-rails
   jbuilder (~> 1.2)
   jquery-rails

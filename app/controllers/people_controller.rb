@@ -1,8 +1,9 @@
 class PeopleController < ApplicationController
-  respond_to :json
+  respond_to :json, :csv
 
   def index
-    respond_with Person.all
+    @people = Person.all
+    respond_with @people
   end
 
   def create
