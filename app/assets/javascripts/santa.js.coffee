@@ -4,10 +4,10 @@ window.Santa =
   Views: {}
   Routers: {}
   initialize: ->
-    people = new Santa.Collections.People
-    people.fetch()
+    #window.people = new Santa.Collections.People
+    #window.people.fetch(reset: true)
 
-    new Santa.Views.PeopleIndex(collection: people)
+    new Santa.Views.PeopleIndex(collection: window.people)
     new Santa.Routers.People
 
 $(document).ready ->
