@@ -1,5 +1,5 @@
 csv << ['Santa', 'Recipients...']
 
-@people.order('name').find_each do |person|
+@people.order('name').each do |person|
   csv << [person.name, *person.gift_recipient_names]
 end
