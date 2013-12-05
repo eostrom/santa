@@ -32,6 +32,8 @@ GEM
       ejs
       jquery-rails
       rails (>= 3.1)
+    backbone-relational-rails (0.8.6)
+      railties (>= 3.1)
     better_errors (1.0.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -138,6 +140,7 @@ PLATFORMS
 
 DEPENDENCIES
   backbone-on-rails
+  backbone-relational-rails
   better_errors
   coffee-rails (~> 4.0.0)
   csv_builder
