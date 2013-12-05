@@ -19,10 +19,7 @@ class Santa.Models.Person extends Backbone.RelationalModel
     }
   ]
 
-  initialize: () ->
-    @set('gift_recipient_names', []) unless @get('gift_recipient_names')
-
   needs_more_santas: () ->
-    @get('gifts_received_count') < 3
+    @get('gifts_received').length < 3
 
 Santa.Models.Person.setup()

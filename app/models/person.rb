@@ -9,7 +9,6 @@ class Person < ActiveRecord::Base
   def as_json(options = {})
     super(
       only: [:id, :name],
-      methods: [:gift_recipient_names, :gifts_received_count],
       include: {
         gifts_given: {
           only: [:id], include: {

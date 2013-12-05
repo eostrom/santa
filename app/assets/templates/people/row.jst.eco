@@ -4,8 +4,8 @@
 <td>
   <button class="delete-person">Delete</button>
 </td>
-<% for i in [0..2]: %>
+<% for gift in @person.get('gifts_given').models: %>
   <td>
-    <%= @person.get('gift_recipient_names')[i] %>
+    <%= gift.get('recipient').get('name') %>
   </td>
 <% end %>
