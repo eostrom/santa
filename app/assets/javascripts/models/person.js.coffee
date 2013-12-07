@@ -7,6 +7,7 @@ class Santa.Models.Person extends Backbone.RelationalModel
       collectionType: 'Santa.Collections.Gifts'
       reverseRelation:
         key: 'giver'
+        includeInJSON: 'id'
     }
 
     {
@@ -16,6 +17,7 @@ class Santa.Models.Person extends Backbone.RelationalModel
       collectionType: 'Santa.Collections.Gifts'
       reverseRelation:
         key: 'recipient'
+        includeInJSON: 'id'
     }
   ]
 

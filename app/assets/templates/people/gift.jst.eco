@@ -1,0 +1,11 @@
+<label>
+  Title
+  <input type="text" name="title" value="<%= @gift.get('title') %>">
+</label>
+
+<label>
+  Artist
+  <input type="text" name="artist" value="<%= @gift.get('artist') %>">
+</label>
+
+<div>from <%= @gift.get('giver').get('name') %></div>

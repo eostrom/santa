@@ -1,0 +1,9 @@
+<h1>Gifts (<a href="#/">View Santas</a>)</h1>
+
+<table id="gifts">
+  <tr>
+    <th colspan="1">Recipient</th>
+    <th>&nbsp;</th>
+    <th colspan="3">Gifts</th>
+  </tr>
+</table>

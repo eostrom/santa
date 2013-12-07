@@ -1,4 +1,4 @@
-<h1><%= @people.length %> People</h1>
+<h1><%= @people.length %> Santas (<a href="#/gifts">View Gifts</a>)</h1>
 
 <form id="add-person">
   <input type="text" name="name">
