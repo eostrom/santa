@@ -32,7 +32,7 @@ class Santa.Views.PeopleIndex extends Backbone.View
     name = $name.val()
     $name.val('')
 
-    @collection.add({name: name}).save()
+    @collection.add([{name: name}])[0].save()
 
   santafy: (event) ->
     @collection.santafy()
