@@ -13,8 +13,7 @@
   </tr>
 </table>
 
-<button id="santafy">Santafy!</button>
-<button id="desantafy">Desantafy!</button>
+<p>Santafication is disabled until next year. Merry Christmas!</p>
 
 <div id="export">
   <a href="/people.csv">Export CSV</a>
