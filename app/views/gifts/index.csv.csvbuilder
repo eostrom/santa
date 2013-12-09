@@ -1,0 +1,23 @@
+csv << ['Recipient', 'Gifts...']
+
+@people.order('name').each do |person|
+  csv << [
+    person.name,
+    *person.gifts_received.map do |gift|
+      [
+        gift.title.presence,
+        ("(#{gift.artist})" if gift.artist.present?)
+      ].compact.join(' ')
+    end
+  ]
+
+  if @include_santas
+    csv << [
+      nil,
+      *person.gifts_received.map do |gift|
+        gift.giver.name
+      end
+    ]
+    csv << []
+  end
+end

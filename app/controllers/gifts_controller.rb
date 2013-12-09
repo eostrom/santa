@@ -1,5 +1,11 @@
 class GiftsController < ApplicationController
-  respond_to :json
+  respond_to :json, :csv
+
+  def index
+    @people = Person.includes(:gifts_received => :giver)
+    @include_santas = !!params[:include_santas]
+    respond_with @people
+  end
 
   def update
     @gift = Gift.find(params[:id])
