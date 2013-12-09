@@ -7,6 +7,11 @@ class GiftsController < ApplicationController
     respond_with @people
   end
 
+  def create
+    @gift = Gift.create(gift_params)
+    respond_with @gift
+  end
+
   def update
     @gift = Gift.find(params[:id])
     @gift.update_attributes(gift_params)
@@ -16,6 +21,6 @@ class GiftsController < ApplicationController
   private
 
   def gift_params
-    params.require(:gift).permit(:title, :artist)
+    params.require(:gift).permit(:title, :artist, :giver_id, :recipient_id)
   end
 end

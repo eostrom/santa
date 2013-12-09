@@ -1,9 +1,9 @@
 Santa::Application.routes.draw do
-  resources :people, only: [:index, :create, :show, :destroy] do
+  resources :people, only: [:index, :create, :destroy] do
     put :santafy, :desantafy, on: :collection
   end
 
-  resources :gifts, only: [:index, :update]
+  resources :gifts, only: [:index, :create, :update]
 
   get "home/index"
   # The priority is based upon order of creation: first created -> highest priority.
