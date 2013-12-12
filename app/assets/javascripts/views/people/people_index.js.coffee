@@ -6,7 +6,7 @@ class Santa.Views.PeopleIndex extends Backbone.View
     @render()
 
     # TODO: add/remove individual subviews instead of rerendering everything
-    @collection.on 'add remove', @render
+    @collection.on 'sync remove', @render
     @collection.on 'reset', @render
 
   render: =>
