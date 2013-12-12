@@ -13,6 +13,7 @@ class Person < ActiveRecord::Base
         gifts_given: {
           only: [:id, :artist, :title],
           include: {
+            giver: {only: [:id]},
             recipient: {only: [:id]}
           }
         }
