@@ -22,4 +22,5 @@ class Santa.Views.PersonRow extends Backbone.View
     'click .delete-person': 'deletePerson'
 
   deletePerson: (event) ->
-    @model.destroy()
+    if (confirm("Really delete #{@model.get('name')}?"))
+      @model.destroy()

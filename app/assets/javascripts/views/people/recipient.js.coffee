@@ -14,4 +14,8 @@ class Santa.Views.Recipient extends Backbone.View
   deleteRecipient: (event) ->
     event.preventDefault()
 
-    @model.destroy()
+    giver = @model.get('giver').get('name')
+    recipient = @model.get('recipient').get('name')
+
+    if (confirm("Really delete #{giver}'s gift to #{recipient}?"))
+      @model.destroy()
