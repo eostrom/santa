@@ -18,6 +18,12 @@ class GiftsController < ApplicationController
     respond_with @gift
   end
 
+  def destroy
+    @gift = Gift.find(params[:id])
+    @gift.destroy
+    respond_with @gift
+  end
+
   private
 
   def gift_params
