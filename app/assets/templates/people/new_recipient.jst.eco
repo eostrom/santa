@@ -1,0 +1,8 @@
+<select class="add-recipient">
+  <option value=''>Add Recipient</option>
+  <% for person in people.models: %>
+    <option value="<%= person.id %>">
+      <%= person.get('name') %>
+    </option>
+  <% end %>
+</select>

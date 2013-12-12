@@ -11,17 +11,15 @@ class Santa.Views.PersonRow extends Backbone.View
   render: =>
     @$el.html(this.template({person: @model}))
 
+    for gift in @model.get('gifts_given').models
+      subview = new Santa.Views.Recipient(model: gift)
+      @$el.append(subview.el)
+
+    subview = new Santa.Views.NewRecipient(giver: @model)
+    @$el.append(subview.el)
+
   events:
     'click .delete-person': 'deletePerson'
-    'change .add-recipient': 'addRecipient'
 
   deletePerson: (event) ->
     @model.destroy()
-
-  addRecipient: (event) ->
-    id = @$el.find('.add-recipient').val()
-    recipient = @model.collection.get(id)
-
-    if recipient
-      gift = new Santa.Models.Gift(recipient: recipient, giver: @model)
-      gift.save()
