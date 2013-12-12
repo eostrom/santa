@@ -2,7 +2,7 @@
   <%= @person.get('name') %>
 </td>
 <td>
-  <button class="delete-person">Delete</button>
+  <button class="delete-person alert">Delete</button>
 </td>
 <% for gift in @person.get('gifts_given').models: %>
   <td>

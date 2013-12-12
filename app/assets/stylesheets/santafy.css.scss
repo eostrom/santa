@@ -7,3 +7,25 @@
     display: block;
   }
 }
+
+th {
+  text-align: left;
+}
+
+td {
+  vertical-align: top;
+}
+
+td:first-child {
+  font-size: 1.1rem;
+  color: darkgreen;
+  font-weight: bold;
+  vertical-align: middle;
+  width: 18%;
+}
+
+table {
+  button, .button {
+    margin-bottom: 0;
+  }
+}
